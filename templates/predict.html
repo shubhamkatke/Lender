@@ -1,0 +1,86 @@
+<html>
+<head>
+	<title>Lender</title>
+<style>
+	*{font-size: 20;background-color:#F5F5DC;}
+	h1{font-size:60;color:#4c3228;}
+	h2{font-size:30;color:#696969;}
+	label{font-family:"Bodoni MT";}
+	input{font-family:"Bodoni MT";}
+	select{font-family:"Bodoni MT";}
+	table{border-spacing:20px;}
+	</style>
+</head>
+<body>
+<input type = "button" value = "Logout" style = "float:right;font-size:30px;background-color:#4c3228;color:white;" onclick = "window.location.href='{{ url_for( 'home') }}';">
+<center>
+<br>
+<h1>Provide below information to find out your status</h1>
+<form action = "{{ url_for('predict') }}" method = "POST">
+<table>
+<tr>
+<td>
+<label for="gender" >Gender:</label></td>
+<td>
+<input type = "radio" name = "gender" value = "f" required>Female</input>
+<input type = "radio" name = "gender" value = "m" >Male</input>
+</td></tr>
+<tr>
+<td><label for="ms" >Marital Status:</label></td>
+<td><input type = "radio" name = "ms" value = "um" required>Unmarried</input>
+<input type = "radio" name = "ms" value = "ma" >Married</input></td>
+</tr>
+<tr>
+<td><label for = "dep">Number of dependents:</label></td>
+<td><input type = "number" name = "dep" min = 0 required/></td>
+</tr>
+<tr>
+<td><label for = "edu">Education Status:</label></td>
+<td><input type = "radio" name = "edu" value = "grad" required>Graduate</input>
+<input type = "radio" name = "edu" value = "ungrad" >Non Graduate</input></td>
+</tr>
+<tr>
+<td><label for = "se">Self Employed</label></td>
+<td>
+<input type = "radio" name = "se" value = "y" required>Yes</input>
+<input type = "radio" name = "se" value = "n" >No</input>
+</td>
+</tr>
+<tr>
+<td><label for = "inc">Your Income ($):</label></td>
+<td><input type = "number" name = "inc" step = any min = 0 required/></td>
+</tr>
+<tr>
+<td><label for = "coinc">Coapplicants Income ($):</label></td>
+<td><input type = "number" name = "coinc" step = any min = 0 required/></td>
+</tr>
+<tr>
+<td><label for = "la">Request for Loan Amount ($):</label></td>
+<td><input type = "number" name = "la" step = any min = 0 required/></td>
+</tr>
+<tr>
+<td><label for = "lat">Loan Period (days):</label></td>
+<td><input type = "number" name = "lat" min = 30 required/></td>
+</tr>
+<tr>
+<td><label for = "ch">Previous Loans:</label></td>
+<td><input type = "radio" name = "ch" value = "p" required>Paid</input>
+<input type = "radio" name = "ch" value = "up" >Unpaid</input>
+<input type = "radio" name = "ch" value = "pp" >Partially Paid</input>
+</td>
+</tr>
+<tr>
+<td><label for = "ps">Residential Area Type:</label></td>
+<td><input type = "radio" name = "ps" value = "ru" required>Rural Area</input>
+<input type = "radio" name = "ps" value = "su" >Suburban Area</input>
+<input type = "radio" name = "ps" value = "u" >Urban Area</input>
+</td>
+</tr>
+</table>
+<br><br>
+<input type ="submit" value = "Find Status" style="font-size:25px;background-color:#C4A484;color:#F5F5DC;">
+</form>
+<h2>{{ msg }}</h2>
+</center>
+</body>
+</html>

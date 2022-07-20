@@ -1,0 +1,27 @@
+<html>
+<head>
+	<title>Lender</title>
+	<style>
+	*{font-size: 30;background-color:#F5F5DC;}
+	h1{font-size:60;color:#C4A484;}
+	h2{font-size:30;color:#696969;}
+	a{font-size:20;padding:10;background-color:#C4A484;color:#F5F5DC;text-decoration:none;}
+	input{font-family:"Bodoni MT";}
+	</style>
+</head>
+<body>
+<center>
+<h1>Login</h1>
+<form method = "POST" action = "/login">
+<input type = "text" name = "un" placeholder = "enter username" required>
+<br><br>
+<input type = "password" name ="pw" placeholder = "enter password" required>
+<br><br>
+<input type = "submit" value = "Login" style="font-size:25px;background-color:#C4A484;color:#F5F5DC;">
+<br>
+</form>
+<a href = "{{ url_for('signup') }}">New Users</a>
+<br><br>{{ msg }}
+</center>
+</body>
+</html>
